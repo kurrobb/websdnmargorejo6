@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Header dengan Submenu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-['Poppins']">
+
+  <!-- Header -->
+  <header class="w-full bg-orange-100 shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Logo dan Nama Sekolah -->
+      <div class="flex items-center space-x-4">
+        <div class="w-20 h-20 bg-zinc-600 border-4 border-sky-700"></div>
+        <div class="leading-tight">
+          <div class="text-black text-xl font-semibold">SDN</div>
+          <div class="text-black text-xl font-semibold">kita bersama</div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden sm:flex items-center space-x-8 relative">
+        <!-- Home -->
+        <a href="#" class="text-black text-xl font-medium transition duration-200 hover:scale-110 hover:text-red-600">Home</a>
+
+        <!-- Profil with submenu -->
+        <div class="group relative">
+            <button class="text-black text-xl font-medium transition duration-200 hover-bg hover:scale-110 hover:text-red-600">
+              Profil
+            </button>
+            <div class="absolute left-0 mt-2 w-40 bg-white shadow-md rounded-md z-10 
+                        opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 
+                        transition-all duration-300 delay-100">
+              <a href="#" class="block px-4 py-2 text-black hover:bg-red-100">Profil 1</a>
+              <a href="#" class="block px-4 py-2 text-black hover:bg-red-100">Profil 2</a>
+            </div>
+          </div>
+
+        <!-- Blog with submenu -->
+        <div class="group relative">
+            <button class="text-black text-xl font-medium transition duration-200 hover:scale-110 hover:text-red-600">
+              Blog
+            </button>
+            <div class="absolute left-0 mt-2 w-40 bg-white shadow-md rounded-md z-10 
+                        opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 
+                        transition-all duration-300 delay-100">
+              <a href="#" class="block px-4 py-2 text-black hover:bg-red-100">Blog 1</a>
+              <a href="#" class="block px-4 py-2 text-black hover:bg-red-100">Blog 2</a>
+            </div>
+          </div>
+
+        <!-- Pengumuman with submenu -->
+        <div class="group relative">
+            <button class="text-black text-xl font-medium transition duration-200 hover:scale-110 hover:text-red-600">
+              Pengumuman
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md z-10 
+                        opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 
+                        transition-all duration-300 delay-100">
+              <a href="#" class="block px-4 py-2 text-black hover:bg-red-100">Pengumuman 1</a>
+              <a href="#" class="block px-4 py-2 text-black hover:bg-red-100">Pengumuman 2</a>
+            </div>
+          </div>
+
+        <!-- Kontak -->
+        <a href="#" class="text-black text-xl font-medium transition duration-200 hover:scale-110 hover:text-red-600">Kontak</a>
+      </nav>
+
+      <!-- Mobile button -->
+      <div class="sm:hidden">
+        <button id="mobile-menu-button" class="text-3xl text-black">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu (optional, tidak diubah untuk sekarang) -->
+  <div id="mobile-menu" class="sm:hidden hidden px-6 py-4 bg-orange-100 space-y-2">
+    <a href="#" class="block text-black text-lg font-medium">Home</a>
+    <a href="#" class="block text-black text-lg font-medium">Profil</a>
+    <a href="#" class="block text-black text-lg font-medium">Blog</a>
+    <a href="#" class="block text-black text-lg font-medium">Pengumuman</a>
+    <a href="#" class="block text-black text-lg font-medium">Kontak</a>
+  </div>
+
+  <script>
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>
